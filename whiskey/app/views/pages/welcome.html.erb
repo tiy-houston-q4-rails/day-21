@@ -1,5 +1,11 @@
 <div class="superhero">
 	<h1>Odyll Rules</h1>
+	<p><%= link_to "All Dranks", dranks_path, class: "button" %>
+
+		<% if false %>
+			<%= link_to @drank.name, drank_path(@drank, show_whatever: true), class: "button" %>
+			<%= link_to @drank.name, @drank, class: "button" %>
+		<% end %>
 </div>
 
 <% if false %>
