@@ -3,4 +3,30 @@
 
 <%= link_to "Create a Drank", new_drank_path, class: "button"%>
 
-[[ in the future, we will list all dranks, in a table]]
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Photo</th>
+      <th>ABV</th>
+      <th>Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dranks.each do |drank| %>
+      <tr>
+        <td><%= drank.name %></td>
+        <td><%= drank.description %></td>
+        <td><%= image_tag drank.photo_url %></td>
+        <td><%= drank.abv %></td>
+        <td>
+          <%= link_to "Show", drank_path(drank) %>
+          <%= link_to "Edit", edit_drank_path(drank) %>
+          Destroy
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

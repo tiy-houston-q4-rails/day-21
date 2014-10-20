@@ -1,8 +1,10 @@
 class DranksController < ApplicationController
   def index
+    @dranks = Drank.all
   end
 
   def show
+    @drank = Drank.find(params[:id])
   end
 
   def new
@@ -20,6 +22,16 @@ class DranksController < ApplicationController
   end
 
   def edit
+    @drank = Drank.find(params[:id])
+  end
+
+  def update
+    @drank = Drank.find(params[:id])
+    if @drank.update(drank_params)
+      redirect_to drank_path(@drank), notice: "Drank updated"
+    else
+      render :edit
+    end
   end
 
   private

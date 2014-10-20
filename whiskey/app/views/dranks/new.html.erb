@@ -1,18 +1,3 @@
 <h1>Bro, create a new Drank</h1>
 
-<%= form_for @drank do |f| %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-
-  <%= f.label :photo_url %>
-  <%= f.text_field :photo_url %>
-
-  <%= f.label :abv, "Alcohol by Volume. ex: 5.5" %>
-  <%= f.text_field :abv %>
-
-  <%= f.button %>
-<% end %>
+<%= render partial: 'form' %>
