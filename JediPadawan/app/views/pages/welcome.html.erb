@@ -1,0 +1,10 @@
+<h1>Pages#welcome</h1>
+<p>Find me in app/views/pages/welcome.html.erb</p>
+
+
+<% @jedis.each do |jedi| %>
+  <h4><%= jedi.name %></h4>
+  <% jedi.padawans.each do |padawan| %>
+    <%= padawan.name %><br/>
+  <% end %>
+<% end %>
